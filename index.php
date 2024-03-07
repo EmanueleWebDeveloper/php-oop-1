@@ -5,7 +5,33 @@
 //   => all'interno della classe è definito un costruttore
 //   => all'interno della classe è definito almeno un metodo
 // - vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
+class Movie {
+    public $titolo;
+    public $autore;
+    public $genere;
+
+    public function __construct($titolo, $autore, $genere) {
+        $this->titolo = $titolo;
+        $this->autore = $autore;
+        $this->genere = $genere;
+    }
+
+    // Metodo per stampare le informazioni del film
+    public function stampaInformazioni() {
+        echo "Titolo: " . $this->titolo . "<br>";
+        echo "Autore: " . $this->autore . "<br>";
+        echo "Genere: " . $this->genere . "<br>";
+    }
+}
+
+
+$pinocchio = new Movie("Pinocchio 2", "Carlo Collodi", "Azione");
+$cenerentola = new Movie("cenerentola 2", "mario rizzo", "fantasy");
+
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +40,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ciao</h1>
+    <?php
+     $pinocchio->stampaInformazioni();
+     $cenerentola->stampaInformazioni();
+    ?>
 </body>
 </html>
